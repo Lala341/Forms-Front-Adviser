@@ -41,7 +41,6 @@ export default class rtc_connection {
         this.peerConnection.addEventListener('datachannel', event => {
             console.log("Created Data Channel");
             this.dataChannel = event.channel;
-            this.sendData("Hello Gonorreas!");
             this.dataChannel.addEventListener('msg', (msg) => {
                 this.messages.push(msg);
                 console.log(this.messages);
@@ -135,5 +134,10 @@ export default class rtc_connection {
                 remoteVideo.srcObject = this.remoteStream;
     }
 
+    registrarCallbackMensajes(funcion) {
+        if (this.dataChannel) {
+            this.dataChannel.addEventListener('message', funcion);
+        }
+    }
 
 }
