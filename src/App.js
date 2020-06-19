@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ChatAsesor from "./components/ChatDetail/ChatAsesor";
 import { makeStyles } from '@material-ui/core/styles';
-
+import {Singleton} from './components/webrtc_connector/singleton';
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   appBar: {
-    backgroundColor: "#314A5E", 
+    backgroundColor: "#314A5E",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -62,24 +62,30 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  paperChat:{
-    overflow:"none" , 
-    float:"left", 
-    height: "410px" , 
-    padding: "5%", 
-    width: "100%" 
+  paperChat: {
+    overflow: "none",
+    float: "left",
+    height: "410px",
+    padding: "5%",
+    width: "100%"
   },
-  paperChatActive:{
-    overflow:"scroll" , 
-    float:"left", 
-    height: "410px" , 
-    padding: "5%", 
-    width: "100%" 
+  paperChatActive: {
+    overflow: "scroll",
+    float: "left",
+    height: "410px",
+    padding: "5%",
+    width: "100%"
   }
 }));
+
+
+
+
 function App() {
   const classes = useStyles();
-  
+  const rtc = Singleton.getInstance();
+
+
   return (
     <div className="App">
       <ChatAsesor classes={classes}></ChatAsesor>
