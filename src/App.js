@@ -88,7 +88,7 @@ function App() {
 
   return (
     <div className="App">
-      <ChatAsesor classes={classes}></ChatAsesor>
+      <ChatAsesor classes={classes} rtc={rtc}></ChatAsesor>
     </div>
   );
 }
