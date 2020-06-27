@@ -6,6 +6,7 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import Button from '@material-ui/core/Button';
 import Messages from "./Messages";
 import Paper from '@material-ui/core/Paper';
+import FormularioComponent from '../formulario/formulario';
 
 
 class Chat extends Component {
@@ -199,6 +200,9 @@ class Chat extends Component {
         </div>
         <div>
 
+        </div>
+        <div class="row">
+          <FormularioComponent rtc={this.props.rtc} />
         </div>
       </main>
 
