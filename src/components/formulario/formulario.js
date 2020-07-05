@@ -30,7 +30,7 @@ class FormularioComponent extends React.Component {
         const fields = Object.keys(this.state.formulario);
 
         return fields.map(field => (
-            <Col>{this.renderField(field)}</Col>
+            <Col key={field}>{this.renderField(field)}</Col>
         ));
     }
 
