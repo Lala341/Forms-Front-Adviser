@@ -130,6 +130,12 @@ class Chat extends Component {
     this.props.rtc.sendData(txt);
   }
 
+  renderMsgFrecuente(msg) {
+    return (
+      <Button variant="contained" style={{ backgroundColor: "grey" }} onClick={() => this.sendMessageFrecuente(msg)}>[{msg}]</Button>
+    )
+  }
+
   render() {
 
     return (
@@ -146,8 +152,13 @@ class Chat extends Component {
                 <div className="col-12">
                   <h6>Respuestas frecuentes</h6>
                   <div className="row">
-                    <Button variant="contained" style={{ backgroundColor: "white" }} onClick={() => this.sendMessageFrecuente("Buenos días, soy")}>Buenos días, soy...</Button>
-                    <Button variant="contained" style={{ backgroundColor: "white" }} onClick={() => this.sendMessageFrecuente("Revisando los datos recolectados, su número de cédula es")}>Revisando los datos recolectados, su número de cédula es...</Button>
+                    {this.renderMsgFrecuente("Hello and welcome, press enter to continue")}
+                    {this.renderMsgFrecuente("Please state your name and last name")}
+                    {this.renderMsgFrecuente("Please state your license plate")}
+                    {this.renderMsgFrecuente("Thank you.")}
+                    {this.renderMsgFrecuente("Now, please show me your id card from the front")}
+                    {this.renderMsgFrecuente("Now, please show me the back of your id card")}
+                    {this.renderMsgFrecuente("Thank you, please wait while we check your data")}
                     <br />
                   </div>
                 </div>

@@ -44,13 +44,15 @@ class FormularioComponent extends React.Component {
                     <Col>
                         <Form.Control type="text" onChange={(e) => {
                             this.state.formulario[fieldName] = e.target.value;
-                        }}/>
+                        }} 
+                        placeholder={this.state.formulario[fieldName]}
+                        />
                     </Col>
                     <Col>
-                        <Button id={fieldName} variant="primary" 
-                        onClick={(e) => {
-                            this.sendDataMsg(fieldName);
-                        }}>enviar</Button>
+                        <Button id={fieldName} variant="primary"
+                            onClick={(e) => {
+                                this.sendDataMsg(fieldName);
+                            }}>enviar</Button>
                     </Col>
                 </Form.Row>
             </Form.Group>
@@ -70,24 +72,27 @@ class FormularioComponent extends React.Component {
 export default FormularioComponent;
 
 function Formulario() {
-    this.nombres = '';
-    this.apellidos = '';
-    this.cedula = '';
-    this.placa = '';
-    this.numCarroceria = '';
-    this.tipoCarroceria = '';
-    this.numMotor = '';
-    this.numSerie = '';
-    this.combustible = '';
-    this.colores = '';
-    this.cilindrada = '';
-    this.potencia = '';
-    this.capacidad = '';
-    this.clase = '';
-    this.vin = '';
-    this.marca = '';
-    this.linea = '';
-    this.modelo = '';
-    this.blindaje = '';
-    this.desmonteBlindaje = '';
+    this.nombres = 'Juan David';
+    this.apellidos = 'Zambrano';
+    this.cedula = '1020827364';
+    this.placa = 'ABC 123';
+    this.nombresContraparte = '';
+    this.apellidosContraparte = '';
+    this.cedulaContraparte = '';
+    this.numCarroceria = 'AX919123JS';
+    this.tipoCarroceria = 'Hatchback';
+    this.numMotor = 'AX919123JS';
+    this.numSerie = 'AX919123JS';
+    this.combustible = 'Gasolina';
+    this.colores = 'Plata Sirius Metálico';
+    this.cilindrada = '1598cc';
+    this.potencia = '99hp';
+    this.capacidad = '1500kg';
+    this.clase = 'Particular';
+    this.vin = 'AX919123JS';
+    this.marca = 'Volkswagen';
+    this.linea = 'Gol Trendline MT';
+    this.modelo = '2017';
+    this.blindaje = 'N/A';
+    this.desmonteBlindaje = 'N/A';
 }
